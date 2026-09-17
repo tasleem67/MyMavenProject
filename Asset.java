@@ -1,39 +1,33 @@
 package com.portfolioproject.model;
 
-public class Asset
-{
-	private String bookid;
-	private String booktitle;
-	private double price;
-	
-	public User(String bookid, String booktitle, double price)
-	{
-		this.bookid=bookid;
-		this.booktitle=booktitle;
-		this.price=price;
-	}
+public abstract class Asset {
 
-	public String getBookid() {
-		return bookid;
-	}
+    private String assetId;
+    private String assetName;
+    private double purchasePrice;
 
-	public void setBookid(String bookid) {
-		this.bookid = bookid;
-	}
+    // Constructor
+    public Asset(String assetId, String assetName, double purchasePrice) {
 
-	public String getBooktitle() {
-		return booktitle;
-	}
+        this.assetId = assetId;
+        this.assetName = assetName;
+        this.purchasePrice = purchasePrice;
+    }
 
-	public void setBooktitle(String booktitle) {
-		this.booktitle = booktitle;
-	}
+    // Getters
 
-	public double getPrice() {
-		return price;
-	}
+    public String getAssetId() {
+        return assetId;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public String getAssetName() {
+        return assetName;
+    }
+
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    // Abstract method
+    public abstract double calculateCurrentValue();
 }
